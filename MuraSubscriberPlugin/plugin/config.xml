@@ -1,0 +1,113 @@
+<plugin>
+<name>Mura Subscriber Plugin</name>
+<!-- the package value becomes a part of the directory name where the plugin is installed. -->
+<package>MuraSubscriberPlugin</package>
+<version>1.1</version>
+<provider>Blue River</provider>
+<providerURL>http://blueriver.com</providerURL>
+<category>Application</category>
+<settings>
+	<setting>
+		<!-- The Name attribute if what you will pull the settings value from the pluginConfig.getSettings('[setting name]') -->
+		<name>enabled</name>
+
+		<!-- The Label element acts a reader friendly alias the settings element -->
+		<label>Enable Subscriber</label>
+
+		<!-- The content of the Hint element show up as a tool tip for the user installing the plugin -->
+		<hint></hint>
+		<type>selectbox</type>
+		<required>true</required>
+		
+		<!-- The Validation element sets the type of validation to use. OPTIONs (email, date, numeric, regex)-->
+		<validation></validation>
+
+		<!-- The regex element is user in conjunction with the Validation element being set to regex. -->
+		<regex></regex>
+
+		<!-- The Message element is used to prompt the user when the value submitted does not pass validation. -->
+		<message></message>
+
+		<!-- The Default values element act as the settings default values when the user is first installing the plugin. -->
+		<defaultvalue></defaultvalue>
+
+		<!-- These next two elements are for select boxes.  They should contain ^ delimited list -->
+		<optionlist>Yes^No</optionlist> 
+		<optionlabellist>Yes^No</optionlabellist>
+	</setting>
+	
+	<setting>
+		<!-- The Name attribute if what you will pull the settings value from the pluginConfig.getSettings('[setting name]') -->
+		<name>yourURL</name>
+
+		<!-- The Label element acts a reader friendly alias the settings element -->
+		<label>Your root URL</label>
+
+		<!-- The content of the Hint element show up as a tool tip for the user installing the plugin -->
+		<hint></hint>
+		<type>text</type>
+		<required>true</required>
+		
+		<!-- The Validation element sets the type of validation to use. OPTIONs (email, date, numeric, regex)-->
+		<validation></validation>
+
+		<!-- The regex element is user in conjunction with the Validation element being set to regex. -->
+		<regex></regex>
+
+		<!-- The Message element is used to prompt the user when the value submitted does not pass validation. -->
+		<message></message>
+
+		<!-- The Default values element act as the settings default values when the user is first installing the plugin. -->
+		<defaultvalue></defaultvalue>
+
+		<!-- These next two elements are for select boxes.  They should contain ^ delimited list -->
+		<optionlist></optionlist>
+		<optionlabellist></optionlabellist>
+	</setting>
+	
+	<setting>
+		<!-- The Name attribute if what you will pull the settings value from the pluginConfig.getSettings('[setting name]') -->
+		<name>doCache</name>
+
+		<!-- The Label element acts a reader friendly alias the settings element -->
+		<label>Cache Results</label>
+
+		<!-- The content of the Hint element show up as a tool tip for the user installing the plugin -->
+		<hint></hint>
+		<type>selectbox</type>
+		<required>true</required>
+		
+		<!-- The Validation element sets the type of validation to use. OPTIONs (email, date, numeric, regex)-->
+		<validation></validation>
+
+		<!-- The regex element is user in conjunction with the Validation element being set to regex. -->
+		<regex></regex>
+
+		<!-- The Message element is used to prompt the user when the value submitted does not pass validation. -->
+		<message></message>
+
+		<!-- The Default values element act as the settings default values when the user is first installing the plugin. -->
+		<defaultvalue>Yes</defaultvalue>
+
+		<!-- These next two elements are for select boxes.  They should contain ^ delimited list -->
+		<optionlist>Yes^No</optionlist> 
+		<optionlabellist>Yes^No</optionlabellist>
+	</setting>
+	
+</settings>
+
+<eventHandlers>
+<eventHandler event="onApplicationLoad" component="eventHandlers.subscriber" persist="true"/>
+</eventHandlers>
+
+<!-- For display objects the the location attribute determines whether display objects for the plugin will execute locally of globally
+Locally means /[siteid]/includes/plugins/[package]_[pluginID]/
+Globally means /plugins/[package]_[pluginID]/
+ -->
+<displayobjects location="global">
+	<!--
+	<displayobject name="Say Hello (cfc)" displaymethod="sayHello" component="displayObjects.sayHello" persist="false"/>
+	<displayobject name="Say Hello (cfm)" displaymethod="sayHello" displayobjectfile="displayObjects/sayHello.cfm"/>
+	-->
+</displayobjects>
+</plugin>
